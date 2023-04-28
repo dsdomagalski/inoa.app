@@ -1,6 +1,4 @@
-
 import os
-import dj_database_url
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -17,11 +15,9 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = [] #os.getenv('ALLOWED_HOSTS').split(' ')
-
+ALLOWED_HOSTS = [] if 'RENDER' not in os.environ else ['www.inoa.app', 'inoa.app', 'www.inoa.app.br', 'inoa.app.br']
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -29,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'landing_page',
 ]
 
 MIDDLEWARE = [
