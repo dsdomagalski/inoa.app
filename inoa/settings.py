@@ -15,7 +15,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = [] if 'RENDER' not in os.environ else ['www.inoa.app', 'inoa.app', 'www.inoa.app.br', 'inoa.app.br']
+ALLOWED_HOSTS = [] if 'RENDER' not in os.environ else ['www.inoa.app', 'inoa.app', 'www.inoa.app.br', 'inoa.app.br', 'google.com']
 
 # Application definition
 INSTALLED_APPS = [
@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'landing_page',
+    'core',
 ]
 
 MIDDLEWARE = [
