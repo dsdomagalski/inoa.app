@@ -1,8 +1,8 @@
 from django.contrib import admin
-from landing_page.views import home
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
-    path('', home, name='home'),
+    path('', include('landing_page.urls'), name='home'),
+    path('clientes/', include('clientes.urls'), name='clientes'),
     path('admin/', admin.site.urls),
 ]
